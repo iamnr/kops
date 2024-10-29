@@ -30,11 +30,10 @@ metadata:
   label: nginx-service
 spec:
   selector:
-    matchLabels:
       app: nginx
       project: roboshop
       component: frontend
-    ports:
+  ports:
     - name: name-of-service
       port: 80
       targetPort: 80

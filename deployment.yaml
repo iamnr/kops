@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: app1
-  name: app1
+  labels: 
+    tier: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: app1
+      tier: frontend
   template:
     metadata:
-      labels:
-        app: app1
+      labels: 
+        tier: frontend
     spec:
       containers:
-      - image: kiran2361993/loadbalancerimage:v1
-        name: loadbalancerimage
-
+      - name: app1
+        image: kiran2361993/loadbalancerimage:v1
+        ports:
+        - containerPort: 80

@@ -1,20 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels: 
-    tier: frontend
+  name: nginx-deployment
+  labels: # these labels belong to deployment
+    app: nginx
 spec:
-  replicas: 3
+  replicas: 10
   selector:
-    matchLabels:
-      tier: frontend
-  template:
+    matchLabels: # these labels should match with pod
+      app: nginx
+      project: roboshop
+      component: frontend
+  template: # this is the pod definition
     metadata:
-      labels: 
-        tier: frontend
+      labels:
+        app: nginx
+        project: roboshop
+        component: frontend
     spec:
       containers:
-      - name: app1
-        image: kiran2361993/loadbalancerimage:v1
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 80

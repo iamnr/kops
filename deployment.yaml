@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: app1 
   labels:
-    tier: frontend-deployment
+    app:kubegame
 spec:
   replicas: 3
   selector:

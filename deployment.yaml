@@ -1,19 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: app1 
-  labels:
-    app:kubegame
+  labels: 
+    app: nginx
 spec:
   replicas: 3
   selector:
     matchLabels:
       tier: frontend
+      app: nginx
   template:
     metadata:
       labels: 
         tier: frontend
+        app: nginx
     spec:
       containers:
-      - name: app1
-        image: kiran2361993/kubegame:v2
+      - name: nginx
+        image: nginx
+        ports:
+        - name: port
+          containerPort: 80

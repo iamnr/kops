@@ -29,7 +29,7 @@ metadata:
 spec:
   selector:
     env: production
-    app: frontend]
+    app: frontend
   ports:
   - name: name-of-the-service
     port: 80

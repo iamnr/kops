@@ -32,6 +32,6 @@ spec:
     app: frontend
   ports:
   - name: name-of-the-service
-    port: 80
+    port: 8082
     targetPort: 80
     protocol: TCP

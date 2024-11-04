@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deplyoment
+  labels:
+    env: production
+spec: 
+  replicas: 5
+  selector:
+    matchLabels:
+      env: production
+      app: frontend
+  template:
+    metadata:
+      labels:
+        env: production
+        app: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80

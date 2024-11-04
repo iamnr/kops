@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: my-replicaSet-demo
+  name: frontend-replica
   labels:  # Move labels under metadata
     env: prod 
     app: frontend 

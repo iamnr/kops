@@ -2,9 +2,9 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: ReplicaSet
-labels: 
-  env: prod 
-  app: frontend 
+  labels: 
+    env: prod 
+    app: frontend 
 spec:
   replicas: 3
   selector:

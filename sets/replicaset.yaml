@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: ReplicaSet
-  labels: 
+  labels:  # Move labels under metadata
     env: prod 
     app: frontend 
 spec:
@@ -15,7 +15,7 @@ spec:
     metadata: 
       labels:
         app: frontend
-        env: prod 
+        env: prod  # Correct the typo here from 'end' to 'env'
     spec:
       containers:
       - name: nginx
